@@ -1,0 +1,260 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  /* background-color: black; */
+}
+.one {
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(174, 0, 255, 0.306);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 50px;
+  font-weight: bold;
+  color: rgb(227, 34, 34);
+  display: none;
+}
+.one .replay {
+  background-color: rgb(0, 179, 0);
+  margin-top: 10px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+.container {
+  width: 1000px;
+  margin: 10px auto;
+}
+.game-info {
+  background-color: #fa96f2;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  margin-bottom: 2px;
+}
+.game-info .category span {
+  font-family: "Playpen Sans", cursive;
+  text-transform: capitalize;
+  color: #e91e63;
+  font-weight: bold;
+}
+.row {
+  width: 100%;
+  height: 500px;
+  display: flex;
+}
+.hangman-draw {
+  background-color: #f8f8f8;
+  width: 50%;
+  height: 100%;
+  padding: 20px;
+}
+.hangman-draw .the-draw {
+  /* background-color: blue; */
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.the-stand {
+  position: absolute;
+  width: 100px;
+  height: 400px;
+  border-bottom: 4px black solid;
+  left: 100px;
+  top: 10px;
+}
+.the-stand::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  background-color: black;
+  height: 95%;
+  left: 50%;
+  bottom: 0;
+}
+.the-hang {
+  width: 170px;
+  top: 50px;
+  position: absolute;
+  height: 40px;
+  border-right: black 4px solid;
+  border-top: black 4px solid;
+  left: 150px;
+}
+.the-rope {
+  position: absolute;
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  border: 4px dashed black;
+  left: 316px;
+  transform: translateX(-50%);
+  top: 90px;
+}
+.head {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 4px solid black;
+  left: 316px;
+  transform: translateX(-50%);
+  top: 95px;
+}
+.body {
+  position: absolute;
+  width: 4px;
+  height: 130px;
+  background-color: black;
+  left: 316px;
+  top: 166px;
+}
+.hands {
+  width: 60px;
+  height: 60px;
+  border-right: 4px solid black;
+  position: absolute;
+  left: 300px;
+  top: 138px;
+  transform: rotate(60deg);
+}
+.hands::before {
+  content: "";
+  width: 60px;
+  height: 60px;
+  border-right: 4px solid black;
+  position: absolute;
+  transform: rotate(-120deg);
+  top: 70px;
+  left: 14px;
+}
+.legs {
+  width: 60px;
+  height: 60px;
+  border-right: 4px solid black;
+  position: absolute;
+  left: 248px;
+  top: 256px;
+  transform: rotate(60deg);
+}
+.legs::before {
+  content: "";
+  width: 60px;
+  height: 60px;
+  border-right: 4px solid black;
+  position: absolute;
+  transform: rotate(-120deg);
+  top: -19px;
+  left: 68px;
+}
+
+.letters {
+  user-select: none;
+  font-family: "Playpen Sans", cursive;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  align-content: center;
+  justify-content: center;
+  gap: 20px;
+}
+.letters div {
+  background-color: #e810d6;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 30px;
+  color: #fff;
+}
+.letters-guess {
+  font-family: "Playpen Sans", cursive;
+  width: 100%;
+  height: 100px;
+  background: #87ceeb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.letters-guess div {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-bottom: 4px rgb(0, 179, 0) solid;
+  /* color: white; */
+  margin: 0 10px;
+  font-size: 35px;
+  font-weight: bold;
+}
+.result {
+  /* text-align: center; */
+  margin: 10px auto;
+  background-color: rgb(0, 179, 0);
+  /* color: white; */
+  font-weight: 300;
+  padding: 15px;
+  border-radius: 4px;
+  font-size: 18px;
+  width: fit-content;
+}
+.result span {
+  visibility: hidden;
+}
+.result span {
+  font-family: "Playpen Sans", cursive;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 3px;
+}
+.ticked {
+  pointer-events: none;
+  position: relative;
+}
+.ticked::before {
+  content: "x";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 0, 0, 0.562);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.the-draw div {
+  display: none;
+}
+.right {
+  pointer-events: none;
+  position: relative;
+}
+.right::before {
+  content: "x";
+  width: 100%;
+  height: 100%;
+  background-color: rgb(4 255 0 / 68%);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
