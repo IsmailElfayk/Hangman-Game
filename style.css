@@ -8,7 +8,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   /* background-color: black; */
 }
-.one {
+.one,
+.two {
   position: absolute;
   z-index: 5;
   width: 100%;
@@ -24,8 +25,14 @@ body {
   font-weight: bold;
   color: rgb(227, 34, 34);
   display: none;
+  height: 100vh;
+  margin-top: -10px;
 }
-.one .replay {
+.two {
+  display: flex;
+}
+.one .replay,
+.two .start {
   background-color: rgb(0, 179, 0);
   margin-top: 10px;
   padding: 10px 15px;
@@ -173,7 +180,7 @@ body {
   gap: 20px;
 }
 .letters div {
-  background-color: #e810d6;
+  /* background-color: ; */
   width: 60px;
   height: 60px;
   display: flex;
@@ -183,6 +190,17 @@ body {
   font-weight: bold;
   font-size: 30px;
   color: #fff;
+  /*333333333*/
+  background-image: linear-gradient(-180deg, #ff7d317a, #e810d6);
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+  outline: 0;
+  overflow: hidden;
+  /* touch-action: manipulation; */
+  transition: box-shadow 0.2s;
+}
+.letters div:hover {
+  box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
 }
 .letters-guess {
   font-family: "Playpen Sans", cursive;
@@ -209,7 +227,9 @@ body {
 .result {
   /* text-align: center; */
   margin: 10px auto;
-  background-color: rgb(0, 179, 0);
+  /* background-color: rgb(0, 179, 0); */
+  background-image: linear-gradient(90deg, #31e0ffc9, rgba(0, 179, 0, 0.795));
+  box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
   /* color: white; */
   font-weight: 300;
   padding: 15px;

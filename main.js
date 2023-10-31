@@ -108,7 +108,18 @@ function play() {
           t = 0;
           f = 0;
           setTimeout(() => {
-            play();
+            console.log("start play");
+            reset();
+            Element = setGame();
+            eleArr = [...Element];
+            console.log(Element);
+            console.log("Exit");
+            //#############
+            for (let i = 0; i < Element.length; i++) {
+              let div = document.createElement("div");
+              div.setAttribute("id", `case${i}`);
+              document.querySelector(".letters-guess").appendChild(div);
+            }
           }, 2000);
         } else {
           s = 0;
@@ -119,7 +130,18 @@ function play() {
             one.style.display = `flex`;
           }, 2000);
           replay.addEventListener("click", () => {
-            play();
+            console.log("start play");
+            reset();
+            Element = setGame();
+            eleArr = [...Element];
+            console.log(Element);
+            console.log("Exit");
+            //#############
+            for (let i = 0; i < Element.length; i++) {
+              let div = document.createElement("div");
+              div.setAttribute("id", `case${i}`);
+              document.querySelector(".letters-guess").appendChild(div);
+            }
           });
         }
         // console.log("game over");
@@ -129,4 +151,8 @@ function play() {
   console.log("Exit");
   return 0;
 }
-play();
+
+document.querySelector(".two .start").addEventListener("click", () => {
+  document.querySelector(".two").style.display = `none`;
+  play();
+});
