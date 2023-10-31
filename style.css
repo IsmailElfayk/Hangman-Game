@@ -413,6 +413,10 @@ body {
   }
   .letters-guess {
     flex-wrap: wrap;
+    padding: 5px;
+    min-height: 60px;
+    row-gap: 5px;
+    height: fit-content;
   }
   .letters-guess div {
     margin: 0 5px;
